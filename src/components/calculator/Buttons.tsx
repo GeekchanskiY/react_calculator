@@ -26,10 +26,12 @@ type ButtonType = {
 type ButtonProps = {
     "value": Number,
     "buttonType": ButtonType,
-    "displayValue": Number,
+    "displayValue": String,
     "callbackFunction": (value: Number, buttonType: ButtonType) => null
 }
 
 export const Button:FunctionComponent<ButtonProps> = ({value, buttonType, displayValue, callbackFunction}) => {
-    return <div></div>
+    return <div className="button">
+        {displayValue}
+    </div>
 }
