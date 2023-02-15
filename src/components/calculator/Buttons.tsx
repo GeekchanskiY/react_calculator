@@ -1,22 +1,5 @@
 import React, {FunctionComponent} from "react";
-
-abstract class Command {
-    abstract execute(): number
-}
-
-class AddCommand extends Command {
-    a: number;
-    b: number;
-    constructor(a: number, b: number) {
-        super();
-        this.a = a
-        this.b = b
-    }
-
-    execute() {
-         return this.a + this.b
-    }
-}
+import { Command } from "./Calculator";
 
 
 // size from 1 to 3 - widget display size
@@ -33,6 +16,9 @@ export type ButtonProps = {
     "callbackF": (value: Number, buttonType: ButtonType) => null
 }
 
+type ButtonsProps = {
+    commands: Command[]
+}
 
 
 export const Button:FunctionComponent<ButtonProps> = ({value, buttonType, displayValue, callbackF}) => {
@@ -41,12 +27,13 @@ export const Button:FunctionComponent<ButtonProps> = ({value, buttonType, displa
     </div>
 }
 
-export const Buttons:FunctionComponent = () => {
+export const Buttons:FunctionComponent<ButtonsProps> = () => {
     const numeric_button_type: ButtonType = {size: 1, isFunctional: false}  
     let i: Number, el: String;
     let numeric_buttons_data: ButtonProps[] = []
-    "123456789".split('').map((el, i) => {numeric_buttons_data.push({value: Number(el), buttonType: numeric_button_type, displayValue: el, callbackF: (value, buttonType) => {return null}})} )
-    console.log(numeric_buttons_data)
+    let a = "123456789".split('').map((el, i) => {numeric_buttons_data.push({value: Number(el), buttonType: numeric_button_type, displayValue: el, callbackF: (value, buttonType) => {return null}})} )
+    
+    let buttons: FunctionComponent<ButtonProps>[] = []
 
     return <div></div>
 }

@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <Calculator value1={initvalue1} value2={initvalue1} result={initvalue1} />
+      <Calculator />
     </div>
   );
 }
