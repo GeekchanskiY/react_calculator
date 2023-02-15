@@ -1,4 +1,5 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useEffect} from "react";
+import { useState } from "react";
 
 type display = {
     "value1": Number,
@@ -7,6 +8,9 @@ type display = {
     "operation": String,
 }
 
-export const display:FunctionComponent = () => {
-    return <div></div>
+export const Display:FunctionComponent<display> = ({value1, value2, result, operation}) => {
+    
+    
+    
+    return <div className="display">{value1.toString()}</div>
 }
