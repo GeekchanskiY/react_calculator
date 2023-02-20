@@ -1,5 +1,5 @@
 .calculator{
-    position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     height: 100%;
@@ -9,10 +9,31 @@
 }
 
 .display{
-    height: 20%;
+    height: 20vh;
     width: 100%;
     top: 0;
     left: 0;
     background-color: aliceblue;
 }
 
+.NumberButtons{
+    position: relative;
+    display: grid;
+    width: 80%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.NumberButton{
+    background-color: darkblue;
+    color: aliceblue;
+    border: 2px solid black;
+    margin: 10px;
+    
+    font-weight: 800;
+    font-size: 3em;
+    text-align: center;
+}
+.NumberButton span{
+    display: inline-block;
+    margin-top: 10%;
+}

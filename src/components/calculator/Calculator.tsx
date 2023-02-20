@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Display } from './Display';
-import { Button, ButtonProps, Buttons } from './Buttons';
+import { Button } from './Buttons';
 import { useState } from 'react';
+import { type } from 'os';
 
 
 export abstract class Command {
@@ -18,7 +19,20 @@ class AddCommand extends Command {
   }
 
   execute() {
-       return this.a + this.b
+       return this.a + this.b;
+  }
+}
+
+class MinusCommand extends Command {
+  a: number;
+  b: number;
+  constructor(a: number, b:number){
+    super();
+    this.a = a
+    this.b = b
+  }
+  execute(): number {
+    return this.a - this.b;
   }
 }
 
@@ -34,11 +48,19 @@ type CalcProps = {
 
   export const Calculator: FunctionComponent = () => {
     
-    const [result, setResult] = useState<Number>(1)
-    
+    const [result, setResult] = useState<Number>(0)
+    const [value1, setValue1] = useState<Number>(0)
+    const [value2, setValue2] = useState<Number>(0)
 
+    let activeInput: Number = new Number(0)
+    console.log(typeof(MinusCommand))
     return <div className='calculator'>
-      <Display value1={1} value2={2} result={result} operation={"+"}/>
-      <Buttons commands={[]}></Buttons>
+      <Display value1={value1} value2={value2} result={result} operation={"+"}/>
+      <div className='NumberButtons'>
+        {[1,2,3,4,5,6,7,8,9,0].map((el, index) => {
+          return <Button value={el} dvalue={el.toString()} key={"numbutton"+el.toString()}></Button>
+        })}
+      </div>
+      
     </div>
   }
