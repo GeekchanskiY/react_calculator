@@ -19,7 +19,7 @@
 .NumberButtons{
     position: relative;
     display: grid;
-    width: 80%;
+    width: 60%;
     height: 80%;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -33,7 +33,27 @@
     font-size: 3em;
     text-align: center;
 }
+
+
 .NumberButton span{
     display: inline-block;
     margin-top: 10%;
+}
+
+.NumberButton:hover{
+    background-color: blue;
+}
+
+
+.displaydiv{
+    height: 100%;
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: darkblue;
+    font-size: 5em;
+}
+.displaydiv span{
+    display: inline-block;
+    margin-top: 5vh;
 }

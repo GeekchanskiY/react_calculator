@@ -55,7 +55,7 @@ type CalcProps = {
     let activeInput: Number = new Number(0)
     console.log(typeof(MinusCommand))
     return <div className='calculator'>
-      <Display value1={value1} value2={value2} result={result} operation={"+"}/>
+      <Display value1={value1.toString()} value2={value2.toString()} result={result.toString()} operation={"+"}/>
       <div className='NumberButtons'>
         {[1,2,3,4,5,6,7,8,9,0].map((el, index) => {
           return <Button value={el} dvalue={el.toString()} key={"numbutton"+el.toString()}></Button>
