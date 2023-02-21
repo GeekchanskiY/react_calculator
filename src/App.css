@@ -18,6 +18,7 @@
 
 .NumberButtons{
     position: relative;
+    float: left;
     display: grid;
     width: 60%;
     height: 80%;
@@ -56,4 +57,13 @@
 .displaydiv span{
     display: inline-block;
     margin-top: 5vh;
+}
+
+.CommandButtons{
+    position: relative;
+    float: left;
+    display: grid;
+    width: 40%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
 }

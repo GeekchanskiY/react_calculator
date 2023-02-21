@@ -52,13 +52,18 @@ type CalcProps = {
     const [value1, setValue1] = useState<Number>(0)
     const [value2, setValue2] = useState<Number>(0)
 
-    let activeInput: Number = new Number(0)
-    console.log(typeof(MinusCommand))
+    const [values, setValues] = useState<number[]>([])
+    
     return <div className='calculator'>
-      <Display value1={value1.toString()} value2={value2.toString()} result={result.toString()} operation={"+"}/>
+      <Display values={[value1.toString()]} result={result.toString()} operations={["+"]}/>
       <div className='NumberButtons'>
         {[1,2,3,4,5,6,7,8,9,0].map((el, index) => {
           return <Button value={el} dvalue={el.toString()} key={"numbutton"+el.toString()}></Button>
+        })}
+      </div>
+      <div className="CommandButtons">
+        {['+', '-', '=', '%', '//', '/', '*', '**'].map((el, index) => {
+          return <Button value={index+10} dvalue={el} key={"commandbutton_"+el}></Button>
         })}
       </div>
       
